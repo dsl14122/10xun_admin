@@ -3,7 +3,9 @@
     <el-header class="indexTitle">
       <el-row>
         <el-col :span="6">
-          <div class="grid-content bg-purple">10讯网管理后台</div>
+          <div class="grid-content bg-purple">
+            <img src="../assets/logo.png" alt="">
+          </div>
         </el-col>
         <el-col :span="10">
           <div class="grid-content bg-purple-light ">首页</div>
@@ -17,30 +19,28 @@
     </el-header>
     <el-container>
       <el-aside width="277px" class="indexLeft">
-           <el-menu
+           <el-menu router
       default-active="2"
-      class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose">
+      class="el-menu-vertical-demo">
+      <el-submenu index="/">
+        <template slot="title">
+          <i class="el-icon-caret-right"></i>
+          <span class="title-name">栏目管理</span>
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="/column">网站栏目管理</el-menu-item>
+          <el-menu-item index="/arclist">所有文档列表</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-caret-right"></i>
-          <span>栏目管理</span>
+          <span class="title-name">图片管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="1-1">网站栏目管理</el-menu-item>
-          <el-menu-item index="1-2">所有文档列表</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="2">
-        <template slot="title">
-          <i class="el-icon-caret-right"></i>
-          <span>图片管理</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item index="1-1">广告区图片</el-menu-item>
-          <el-menu-item index="1-2">直播区图片</el-menu-item>
-          <el-menu-item index="1-3">视频区图片</el-menu-item>
+          <el-menu-item  index="/advertising">广告区图片</el-menu-item>
+          <el-menu-item  index="/live">直播区图片</el-menu-item>
+          <el-menu-item  index="/radio">视频区图片</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -53,14 +53,10 @@
 </template>
 <script>
 export default {
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
-    }
+  name:'index',
+  methods: {
+   
+  }
 };
 </script>
 <style scoped lang="less">
@@ -72,10 +68,24 @@ export default {
     color: #fff;
     font-size: 40px;
     line-height: 126px;
-
+    .bg-purple{
+      img{
+        margin-top: 30px;
+      }
+    }
+    .bg-purple-light{
+      float: left;
+    }
   }
   .indexLeft {
-    background-color: pink;
+    background-color: #cdcdcd;
+    .title-name{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .el-menu-item.is-active {
+    color: #c30d24;
+  }
   }
   .indexRight {
     padding-top: 0;
