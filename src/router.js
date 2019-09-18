@@ -10,6 +10,8 @@ import column from "./components/column.vue"
 import advertising from "./components/advertising.vue"
 import live from "./components/live.vue"
 import radio from "./components/radio.vue"
+import increase from "./components/increase.vue"
+
 
 const routes=[
  {path:'/login',component:login},
@@ -19,6 +21,7 @@ const routes=[
    {path:'advertising',component:advertising},
    {path:'live',component:live},
    {path:'radio',component:radio},
+   {path:'increase',component:increase},
  ]},
  
 ]

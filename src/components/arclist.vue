@@ -9,8 +9,8 @@
     <!-- 按钮 -->
     <div class="btnList">
       <el-row class="rowLeft">
-        <el-button type="warning" icon="el-icon-plus" circle></el-button>增加
-        <el-button type="primary" icon="el-icon-minus" circle></el-button>删除
+        <el-button type="warning" icon="el-icon-plus" @click="$router.push('increase')" circle>增加</el-button>
+        <el-button type="primary" icon="el-icon-minus" circle>删除</el-button>
       </el-row>
       <el-row class="rowRight">
         <span class="keyWord">关键字</span>
@@ -115,7 +115,14 @@ export default {
         height: 25px;
         vertical-align: middle;
         position: relative;
-        margin-right: 7px;
+        margin-right:60px;
+        span{
+          position: absolute;
+          color: #000;
+          left: 24px;
+          top: 0;
+          font-size: 25px;
+        }
         i {
           position: absolute;
           left: 5px;
